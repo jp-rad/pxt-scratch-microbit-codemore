@@ -1,5 +1,10 @@
 #include "pxt.h"
+
+#if MICROBIT_CODAL
+#include "MbitMoreServiceV2.h"
+#else
 #include "MbitMoreService.h"
+#endif
 
 #define UPDATE_PERIOD 11
 #define NOTIFY_PERIOD 101
