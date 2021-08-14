@@ -1,21 +1,39 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "micro:bit v1",
             "includePath": [
-                "${workspaceFolder}/*",
-                "${workspaceFolder}/pxt_modules/**",
-                "${workspaceFolder}/../microbit-samples/yotta_modules/**"
+                "/opt/ubit/nrfx/**",
+                "/opt/ubit/microbit/inc/**",
+                "/opt/ubit/microbit-dal/inc/**",
+                "/opt/ubit/codal-microbit/inc/**",
+                "${workspaceFolder}/**"
             ],
             "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
             ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        },
+        {
+            "name": "micro:bit v2",
+            "includePath": [
+                "/opt/ubit/nrfx/**",
+                "/opt/ubit/microbit/inc/**",
+                "/opt/ubit/microbit-dal/inc/**",
+                "/opt/ubit/codal-microbit-v2/inc/**",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "CODAL_CONFIG_H",
+                "DEVICE_BLE=1",
+                "CONFIG_ENABLED(x)=(x)"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
         }
     ],
     "version": 4

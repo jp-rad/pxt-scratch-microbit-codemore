@@ -1,35 +1,23 @@
 {
-  "files.autoSave": "onFocusChange",
-  "files.exclude": {
-    "**/.history": true
-  },
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.history/**": true,
-    "**/built/**": true,
-    "**/node_modules/**": true,
-    "**/pxt_modules/**": true,
-    "**/yotta_modules/**": true,
-    "**/yotta_targets": true
-  },
-  "search.exclude": {
-    "**/.history": true,
-    "**/built": true,
-    "**/node_modules": true,
-    "**/pxt_modules": true,
-    "**/yotta_modules": true,
-    "**/yotta_targets": true
-  },
-  "files.associations": {
-    "optional": "cpp",
-    "istream": "cpp",
-    "ostream": "cpp",
-    "ratio": "cpp",
-    "system_error": "cpp",
-    "array": "cpp",
-    "functional": "cpp",
-    "tuple": "cpp",
-    "type_traits": "cpp",
-    "utility": "cpp"
-  }
+    "editor.formatOnType": true,
+    "files.autoSave": "afterDelay",
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/built/**": true,
+        "**/node_modules/**": true,
+        "**/yotta_modules/**": true,
+        "**/yotta_targets": true,
+        "**/pxt_modules/**": true
+    },
+    "files.associations": {
+        "*.blocks": "html",
+        "*.jres": "json"
+    },
+    "search.exclude": {
+        "**/built": true,
+        "**/node_modules": true,
+        "**/yotta_modules": true,
+        "**/yotta_targets": true,
+        "**/pxt_modules": true
+    }
 }
