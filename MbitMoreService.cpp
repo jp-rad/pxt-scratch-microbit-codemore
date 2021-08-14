@@ -736,7 +736,7 @@ void MbitMoreService::onBLEConnected(MicroBitEvent _e)
 {
   uBit.display.stopAnimation(); // To stop display friendly name.
   initConfiguration();
-  uBit.display.scrollAsync("v.0.5.0");
+  uBit.display.scrollAsync("v.0.5.1");
   lightSensingDuration = 255; // Continuous light sensing for GUI v0.4.2
 }
 
