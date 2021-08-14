@@ -1,9 +1,13 @@
-#ifndef SCRATCH_MORE_SERVICE_H
-#define SCRATCH_MORE_SERVICE_H
+#ifndef SCRATCH_MORE_SERVICE_V2_H
+#define SCRATCH_MORE_SERVICE_V2_H
 
 #include "pxt.h"
 
-#if !MICROBIT_CODAL
+#include "MicroBit.h"
+#include "MicroBitConfig.h"
+
+#if MICROBIT_CODAL
+#if CONFIG_ENABLED(DEVICE_BLE)
 
 #include "MicroBit.h"
 
@@ -36,7 +40,7 @@ class MbitMoreService
 public:
   /**
     * Constructor.
-    * Create a representation of the MbitMoreService
+    * Create a representation of the MbitMoreServiceV2
     * @param _uBit The instance of a MicroBit runtime.
     */
   MbitMoreService(MicroBit &_uBit);
@@ -60,15 +64,15 @@ public:
    */
   int getSharedData(int index);
 
-  /**
-   * Callback. Invoked when AnalogIn is read via BLE.
-   */
-  void onReadAnalogIn(GattReadAuthCallbackParams *authParams);
+  // /**
+  //  * Callback. Invoked when AnalogIn is read via BLE.
+  //  */
+  // void onReadAnalogIn(GattReadAuthCallbackParams *authParams);
 
-  /**
-   * Callback. Invoked when any of our attributes are written via BLE.
-   */
-  void onDataWritten(const GattWriteCallbackParams *params);
+  // /**
+  //  * Callback. Invoked when any of our attributes are written via BLE.
+  //  */
+  // void onDataWritten(const GattWriteCallbackParams *params);
 
   /**
    * Invocked when the bluetooth connected.
@@ -217,66 +221,67 @@ private:
   // microbit runtime instance
   MicroBit &uBit;
 
-  // Handles to access each characteristic when they are held by Soft Device.
-  GattAttribute::Handle_t txCharacteristicHandle;
-  GattAttribute::Handle_t rxCharacteristicHandle;
+  // // Handles to access each characteristic when they are held by Soft Device.
+  // GattAttribute::Handle_t txCharacteristicHandle;
+  // GattAttribute::Handle_t rxCharacteristicHandle;
 
-  GattCharacteristic *eventChar;
-  GattCharacteristic *ioChar;
-  GattCharacteristic *analogInChar;
-  GattCharacteristic *sensorsChar;
-  GattCharacteristic *sharedDataChar;
+  // GattCharacteristic *eventChar;
+  // GattCharacteristic *ioChar;
+  // GattCharacteristic *analogInChar;
+  // GattCharacteristic *sensorsChar;
+  // GattCharacteristic *sharedDataChar;
 
-  GattAttribute::Handle_t eventCharHandle;
-  GattAttribute::Handle_t ioCharHandle;
-  GattAttribute::Handle_t sensorsCharHandle;
-  GattAttribute::Handle_t sharedDataCharHandle;
+  // GattAttribute::Handle_t eventCharHandle;
+  // GattAttribute::Handle_t ioCharHandle;
+  // GattAttribute::Handle_t sensorsCharHandle;
+  // GattAttribute::Handle_t sharedDataCharHandle;
 
-  enum ScratchBLECommand
-  {
-    CMD_PIN_CONFIG = 0x80,
-    CMD_DISPLAY_TEXT = 0x81,
-    CMD_DISPLAY_LED = 0x82,
-    CMD_PROTOCOL = 0x90,
-    CMD_PIN = 0x91,
-    CMD_SHARED_DATA = 0x92,
-    CMD_LIGHT_SENSING = 0x93
-  };
+  // enum ScratchBLECommand
+  // {
+  //   CMD_PIN_CONFIG = 0x80,
+  //   CMD_DISPLAY_TEXT = 0x81,
+  //   CMD_DISPLAY_LED = 0x82,
+  //   CMD_PROTOCOL = 0x90,
+  //   CMD_PIN = 0x91,
+  //   CMD_SHARED_DATA = 0x92,
+  //   CMD_LIGHT_SENSING = 0x93
+  // };
 
-  enum MBitMorePinCommand
-  {
-    SET_OUTPUT = 0x01,
-    SET_PWM = 0x02,
-    SET_SERVO = 0x03,
-    SET_PULL = 0x04,
-    SET_EVENT = 0x05,
-    SET_TOUCH = 0x06,
-  };
+  // enum MBitMorePinCommand
+  // {
+  //   SET_OUTPUT = 0x01,
+  //   SET_PWM = 0x02,
+  //   SET_SERVO = 0x03,
+  //   SET_PULL = 0x04,
+  //   SET_EVENT = 0x05,
+  //   SET_TOUCH = 0x06,
+  // };
 
-  enum MBitMorePinMode
-  {
-    PullNone = 0,
-    PullUp = 1,
-    PullDown = 2,
-  };
+  // enum MBitMorePinMode
+  // {
+  //   PullNone = 0,
+  //   PullUp = 1,
+  //   PullDown = 2,
+  // };
 
-  enum MBitMoreDataFormat
-  {
-    MIX_01 = 0x01,
-    MIX_02 = 0x02,
-    MIX_03 = 0x03,
-    SHARED_DATA = 0x11,
-    EVENT = 0x12,
-  };
+  // enum MBitMoreDataFormat
+  // {
+  //   MIX_01 = 0x01,
+  //   MIX_02 = 0x02,
+  //   MIX_03 = 0x03,
+  //   SHARED_DATA = 0x11,
+  //   EVENT = 0x12,
+  // };
 
-  enum MBitMorePinEventType
-  {
-    NONE = 0,
-    ON_EDGE = 1,
-    ON_PULSE = 2,
-    ON_TOUCH = 3
-  };
+  // enum MBitMorePinEventType
+  // {
+  //   NONE = 0,
+  //   ON_EDGE = 1,
+  //   ON_PULSE = 2,
+  //   ON_TOUCH = 3
+  // };
 };
 
-#endif // #if !MICROBIT_CODAL
+#endif // #if CONFIG_ENABLED(DEVICE_BLE)
+#endif // #if MICROBIT_CODAL
 #endif

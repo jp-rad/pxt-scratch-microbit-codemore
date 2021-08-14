@@ -14,7 +14,9 @@
         "extension.ts",
         "extension.cpp",
         "MbitMoreService.h",
-        "MbitMoreService.cpp"
+        "MbitMoreService.cpp",
+        "MbitMoreServiceV2.h",
+        "MbitMoreServiceV2.cpp"
     ],
     "testFiles": [
         "test.ts"
