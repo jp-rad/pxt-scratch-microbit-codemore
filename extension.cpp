@@ -23,11 +23,11 @@ enum SharedDataIndex {
 //% color=#FF9900 weight=95 icon="\uf1b0"
 namespace MbitMore {
     MbitMoreService* _pService = NULL;
-    
+    MicroBitEvent evt(DEVICE_ID_CODEMORE, DEVICE_CODEMORE_EVT_DIPSPLAY_TEXT_CMD);
+
     int	displayTextCommand(MicroBit &e, ManagedString &mstr) {
-        uBit.display.stopAnimation();
-        uBit.display.scrollAsync("CMD!", 120);
-        return 0;   // handled!
+        evt.fire();
+        return 0; // handled!
     }
 
     void update() {
@@ -77,4 +77,15 @@ namespace MbitMore {
 
         return _pService->getSharedData((int)index);
     }    
+    
+    /**
+     * Used internally by the library.
+     */
+    //% block
+    //% deprecated=true blockHidden=1 
+    void onCodemoreEventImpl(Action body) {
+        //registerWithDal(MICROBIT_ID_BUTTON_A, MICROBIT_BUTTON_EVT_CLICK, body);
+        registerWithDal(DEVICE_ID_CODEMORE, DEVICE_CODEMORE_EVT_DIPSPLAY_TEXT_CMD, body);
+    }
+
 }

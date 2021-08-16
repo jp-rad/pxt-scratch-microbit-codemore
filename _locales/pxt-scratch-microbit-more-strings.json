@@ -1,5 +1,7 @@
 {
   "MbitMore.getSharedData|block": "value of shared %index",
+  "MbitMore.onCodemoreEventImpl|block": "true",
+  "MbitMore.onDisplayTextCommand|block": "on display text command received",
   "MbitMore.setSharedData|block": "set shared %index to %value",
   "MbitMore.startService|block": "start Microbit-More service",
   "MbitMore|block": "MbitMore",

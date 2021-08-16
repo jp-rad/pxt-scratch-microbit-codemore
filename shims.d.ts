@@ -22,6 +22,13 @@ declare namespace MbitMore {
      */
     //% shim=MbitMore::getMbitMoreSharedData
     function getMbitMoreSharedData(index: SharedDataIndex): int32;
+
+    /**
+     * Used internally by the library.
+     */
+    //% block
+    //% deprecated=true blockHidden=1 shim=MbitMore::onCodemoreEventImpl
+    function onCodemoreEventImpl(body: () => void): void;
 }
 
 // Auto-generated. Do not edit. Really.
