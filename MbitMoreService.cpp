@@ -43,6 +43,8 @@ int getPowerVoltage(void)
 MbitMoreService::MbitMoreService(MicroBit &_uBit)
     : uBit(_uBit)
 {
+  displayTextCommand = NULL;
+  
   // Calibrate the compass before start bluetooth service.
   if (!uBit.compass.isCalibrated())
   {
@@ -210,8 +212,10 @@ void MbitMoreService::onDataWritten(const GattWriteCallbackParams *params)
       memcpy(text, &(data[1]), (params->len) - 1);
       text[(params->len) - 1] = '\0';
       ManagedString mstr(text);
-      uBit.display.stopAnimation();        // Do not wait the end of current animation as same as the standard extension.
-      uBit.display.scrollAsync(mstr, 120); // Interval is corresponding with the standard extension.
+      if ((NULL==displayTextCommand) || ('@'!=text[0]) || displayTextCommand(uBit, mstr)) {
+        uBit.display.stopAnimation();        // Do not wait the end of current animation as same as the standard extension.
+        uBit.display.scrollAsync(mstr, 120); // Interval is corresponding with the standard extension.
+      }
     }
     else if (data[0] == ScratchBLECommand::CMD_DISPLAY_LED)
     {
@@ -843,6 +847,10 @@ void MbitMoreService::displayFriendlyName()
 {
   ManagedString suffix(" MORE! ");
   uBit.display.scrollAsync(uBit.getName() + suffix, 120);
+}
+
+void MbitMoreService::assigneCallbackDisplayTextCommand(p_displayTextCommand func){
+  displayTextCommand = func;
 }
 
 const uint16_t MBIT_MORE_BASIC_SERVICE = 0xf005;

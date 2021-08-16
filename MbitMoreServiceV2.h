@@ -10,6 +10,7 @@
 #if CONFIG_ENABLED(DEVICE_BLE)
 
 #include "MicroBit.h"
+#include "MbitCodemore.h"
 
 #define SCRATCH_MORE_ID 2000
 
@@ -280,6 +281,10 @@ private:
   //   ON_PULSE = 2,
   //   ON_TOUCH = 3
   // };
+
+public:
+  void assigneCallbackDisplayTextCommand(p_displayTextCommand displayTextCommand);
+
 };
 
 #endif // #if CONFIG_ENABLED(DEVICE_BLE)

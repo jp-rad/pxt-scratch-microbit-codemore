@@ -1,0 +1,11 @@
+{
+  "MbitMore.getMbitMoreSharedData": "Get shared data value.",
+  "MbitMore.getSharedData": "Get value of the shared data.",
+  "MbitMore.setMbitMoreSharedData": "Set shared data value.",
+  "MbitMore.setSharedData": "Set value of the shared data.",
+  "MbitMore.setSharedData|param|index": "- Index of shared data.",
+  "MbitMore.setSharedData|param|value": "- New value of shared data.",
+  "MbitMore.startMbitMoreService": "Starts a Scratch extension service.",
+  "MbitMore.startService": "Starts BLE services for Scratch Microbit-More extension.",
+  "ScratchBLECommand": "Voltage of the power supply in [mV]"
+}

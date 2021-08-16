@@ -23,6 +23,12 @@ enum SharedDataIndex {
 //% color=#FF9900 weight=95 icon="\uf1b0"
 namespace MbitMore {
     MbitMoreService* _pService = NULL;
+    
+    int	displayTextCommand(MicroBit &e, ManagedString &mstr) {
+        uBit.display.stopAnimation();
+        uBit.display.scrollAsync("CMD!", 120);
+        return 0;   // handled!
+    }
 
     void update() {
         while (NULL != _pService) {
@@ -47,6 +53,7 @@ namespace MbitMore {
         if (NULL != _pService) return;
 
         _pService = new MbitMoreService(uBit);
+        _pService->assigneCallbackDisplayTextCommand(displayTextCommand);
         create_fiber(update);
         create_fiber(notifyScratch);
     }

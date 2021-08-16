@@ -3,9 +3,7 @@
     "version": "0.5.1",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "bluetooth": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
@@ -13,6 +11,7 @@
         "shims.d.ts",
         "extension.ts",
         "extension.cpp",
+        "MbitCodemore.h",
         "MbitMoreService.h",
         "MbitMoreService.cpp",
         "MbitMoreServiceV2.h",
