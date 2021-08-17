@@ -6,22 +6,17 @@
 declare namespace MbitMore {
 
     /**
+     * Get last display text command
+     */
+    //% block
+    //% deprecated=true blockHidden=1 shim=MbitMore::getLastDisplayTextCommand
+    function getLastDisplayTextCommand(): string;
+
+    /**
      * Starts a Scratch extension service.
      */
     //% shim=MbitMore::startMbitMoreService
     function startMbitMoreService(): void;
-
-    /**
-     * Set shared data value.
-     */
-    //% shim=MbitMore::setMbitMoreSharedData
-    function setMbitMoreSharedData(index: SharedDataIndex, value: int32): void;
-
-    /**
-     * Get shared data value. 
-     */
-    //% shim=MbitMore::getMbitMoreSharedData
-    function getMbitMoreSharedData(index: SharedDataIndex): int32;
 
     /**
      * Used internally by the library.

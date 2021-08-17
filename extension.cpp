@@ -23,10 +23,22 @@ enum SharedDataIndex {
 //% color=#FF9900 weight=95 icon="\uf1b0"
 namespace MbitMore {
     MbitMoreService* _pService = NULL;
-    MicroBitEvent evt(DEVICE_ID_CODEMORE, DEVICE_CODEMORE_EVT_DIPSPLAY_TEXT_CMD);
+    MicroBitEvent _evt(DEVICE_ID_CODEMORE, DEVICE_CODEMORE_EVT_DIPSPLAY_TEXT_CMD);
+
+    ManagedString _lastDisplayTextCommand("");
+
+    /**
+     * Get last display text command
+     */
+    //% block
+    //% deprecated=true blockHidden=1 
+    String getLastDisplayTextCommand() {
+        return PSTR(_lastDisplayTextCommand);
+    }
 
     int	displayTextCommand(MicroBit &e, ManagedString &mstr) {
-        evt.fire();
+        _lastDisplayTextCommand = mstr;
+        _evt.fire();
         return 0; // handled!
     }
 
@@ -58,25 +70,25 @@ namespace MbitMore {
         create_fiber(notifyScratch);
     }
 
-    /**
-    * Set shared data value.
-    */
-    //%
-    void setMbitMoreSharedData(SharedDataIndex index, int value) {
-        if (NULL == _pService) return;
+    // /**
+    // * Set shared data value.
+    // */
+    // //%
+    // void setMbitMoreSharedData(SharedDataIndex index, int value) {
+    //     if (NULL == _pService) return;
 
-        _pService->setSharedData((int)index, value);
-    }
+    //     _pService->setSharedData((int)index, value);
+    // }
 
-    /**
-     * Get shared data value. 
-     */
-    //%
-    int getMbitMoreSharedData(SharedDataIndex index) {
-        if (NULL == _pService) return 0;
+    // /**
+    //  * Get shared data value. 
+    //  */
+    // //%
+    // int getMbitMoreSharedData(SharedDataIndex index) {
+    //     if (NULL == _pService) return 0;
 
-        return _pService->getSharedData((int)index);
-    }    
+    //     return _pService->getSharedData((int)index);
+    // }    
     
     /**
      * Used internally by the library.

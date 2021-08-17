@@ -11,26 +11,6 @@ namespace MbitMore {
         console.log("Microbit-More started");
     }
 
-    /**
-     * Set value of the shared data.
-     * @param index - Index of shared data.
-     * @param value - New value of shared data.
-     */
-    //% blockId=MbitMore_setMbitMoreSharedData block="set shared %index to %value"
-    //% shim=MbitMore::setMbitMoreSharedData
-    export function setSharedData(index: SharedDataIndex, value: number):void {
-        sharedData[index] = value;
-    }
-
-    /**
-     * Get value of the shared data.
-     */
-    //% blockId=MbitMore_getMbitMoreSharedData block="value of shared %index"
-    //% shim=MbitMore::getMbitMoreSharedData
-    export function getSharedData(index: SharedDataIndex):number {
-        return sharedData[index];
-    }
-    
     let initialized = false;
     let onDisplayTextCommandBody: (cmd: string) => void;
 
@@ -52,7 +32,8 @@ namespace MbitMore {
 
     function handleCodemoreEvent(): void {
         if (onDisplayTextCommandBody) {
-            onDisplayTextCommandBody("FIRE!");
+            let cmd: string = getLastDisplayTextCommand();
+            onDisplayTextCommandBody(cmd);
         }
     }
 

@@ -2,7 +2,7 @@
 
 
     /**
-     * Voltage of the power supply in [mV]
+     * Rotation value [pitch, roll] in radians.
      */
 
     declare const enum ScratchBLECommand

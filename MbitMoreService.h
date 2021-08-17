@@ -8,9 +8,9 @@
 #include "MicroBit.h"
 #include "MbitCodemore.h"
 
-#define SCRATCH_MORE_ID 2000
+//#define SCRATCH_MORE_ID 2000
 
-#define SCRATCH_MORE_EVT_NOTIFY 1
+//#define SCRATCH_MORE_EVT_NOTIFY 1
 
 /**
  * Position of data format in a value holder.
@@ -21,12 +21,12 @@
 extern const uint16_t MBIT_MORE_BASIC_SERVICE;
 extern const uint8_t MBIT_MORE_BASIC_TX[];
 extern const uint8_t MBIT_MORE_BASIC_RX[];
-extern const uint8_t MBIT_MORE_SERVICE[];
-extern const uint8_t MBIT_MORE_EVENT[];
-extern const uint8_t MBIT_MORE_IO[];
-extern const uint8_t MBIT_MORE_SENSORS[];
-extern const uint8_t MBIT_MORE_SHARED_DATA[];
-extern const uint8_t MBIT_MORE_ANALOG_IN[];
+// extern const uint8_t MBIT_MORE_SERVICE[];
+// extern const uint8_t MBIT_MORE_EVENT[];
+// extern const uint8_t MBIT_MORE_IO[];
+// extern const uint8_t MBIT_MORE_SENSORS[];
+// extern const uint8_t MBIT_MORE_SHARED_DATA[];
+// extern const uint8_t MBIT_MORE_ANALOG_IN[];
 
 /**
   * Class definition for a MicroBitMore Service.
@@ -108,20 +108,20 @@ private:
   // Recieving buffer from Scratch3.
   uint8_t rxBuffer[10];
 
-  // Config buffer set by Scratch.
-  uint8_t eventBuffer[20];
+  // // Config buffer set by Scratch.
+  // uint8_t eventBuffer[20];
 
-  // Sending data of IO to Scratch.
-  uint8_t ioBuffer[4];
+  // // Sending data of IO to Scratch.
+  // uint8_t ioBuffer[4];
 
-  // Sending data of analog input to Scratch.
-  uint8_t analogInBuffer[20];
+  // // Sending data of analog input to Scratch.
+  // uint8_t analogInBuffer[20];
 
-  // Sending data of all sensors to Scratch.
-  uint8_t sensorsBuffer[20];
+  // // Sending data of all sensors to Scratch.
+  // uint8_t sensorsBuffer[20];
 
-  // Shared data with Scratch.
-  uint8_t sharedBuffer[20];
+  // // Shared data with Scratch.
+  // uint8_t sharedBuffer[20];
 
   /**
    * Button state.
@@ -139,56 +139,56 @@ private:
    */
   int lastAcc[3];
 
-  /**
-   * Heading angle of compass.
-   */
-  int compassHeading;
+  // /**
+  //  * Heading angle of compass.
+  //  */
+  // int compassHeading;
 
   uint32_t digitalValues;
 
-  uint16_t analogValues[6];
+  // uint16_t analogValues[6];
 
-  /**
-   * Light level value from 0 to 255.
-   */
-  int lightLevel;
+  // /**
+  //  * Light level value from 0 to 255.
+  //  */
+  // int lightLevel;
 
-  int lightSensingDuration;
+  // int lightSensingDuration;
 
-  /**
-   * Acceleration value [x, y, z] in milli-g.
-   */
-  int acceleration[6];
+  // /**
+  //  * Acceleration value [x, y, z] in milli-g.
+  //  */
+  // int acceleration[6];
 
   /**
    * Rotation value [pitch, roll] in radians.
    */
   float rotation[2];
 
-  /**
-   * Magnetic force [x, y, z] in 1000 * micro-teslas.
-   */
-  int magneticForce[3];
+  // /**
+  //  * Magnetic force [x, y, z] in 1000 * micro-teslas.
+  //  */
+  // int magneticForce[3];
 
-  /**
-   * Shared data
-   */
-  int16_t sharedData[4];
+  // /**
+  //  * Shared data
+  //  */
+  // int16_t sharedData[4];
 
-  /**
-   * Protocol of microbit more.
-   */
-  int mbitMoreProtocol;
+  // /**
+  //  * Protocol of microbit more.
+  //  */
+  // int mbitMoreProtocol;
 
-  /**
-   * Current mode of all pins.
-   */
-  PinMode pullMode[21];
+  // /**
+  //  * Current mode of all pins.
+  //  */
+  // PinMode pullMode[21];
   
-  /**
-   * Voltage of the power supply in [mV]
-   */
-  int powerVoltage;
+  // /**
+  //  * Voltage of the power supply in [mV]
+  //  */
+  // int powerVoltage;
 
 
   void listenPinEventOn(int pinIndex, int eventType);
@@ -222,16 +222,16 @@ private:
   GattAttribute::Handle_t txCharacteristicHandle;
   GattAttribute::Handle_t rxCharacteristicHandle;
 
-  GattCharacteristic *eventChar;
-  GattCharacteristic *ioChar;
-  GattCharacteristic *analogInChar;
-  GattCharacteristic *sensorsChar;
-  GattCharacteristic *sharedDataChar;
+  // GattCharacteristic *eventChar;
+  // GattCharacteristic *ioChar;
+  // GattCharacteristic *analogInChar;
+  // GattCharacteristic *sensorsChar;
+  // GattCharacteristic *sharedDataChar;
 
-  GattAttribute::Handle_t eventCharHandle;
-  GattAttribute::Handle_t ioCharHandle;
-  GattAttribute::Handle_t sensorsCharHandle;
-  GattAttribute::Handle_t sharedDataCharHandle;
+  // GattAttribute::Handle_t eventCharHandle;
+  // GattAttribute::Handle_t ioCharHandle;
+  // GattAttribute::Handle_t sensorsCharHandle;
+  // GattAttribute::Handle_t sharedDataCharHandle;
 
   enum ScratchBLECommand
   {
