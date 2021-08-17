@@ -4,9 +4,5 @@
   "MbitMore.onDisplayTextCommand|block": "on display text command received",
   "MbitMore.startService|block": "start Microbit-More service",
   "MbitMore|block": "MbitMore",
-  "SharedDataIndex.DATA0|block": "data0",
-  "SharedDataIndex.DATA1|block": "data1",
-  "SharedDataIndex.DATA2|block": "data2",
-  "SharedDataIndex.DATA3|block": "data3",
   "{id:category}MbitMore": "MbitMore"
 }

@@ -9,17 +9,6 @@
 #define UPDATE_PERIOD 11
 #define NOTIFY_PERIOD 101
 
-enum SharedDataIndex {
-    //% block="data0"
-    DATA0 = 0,
-    //% block="data1"
-    DATA1 = 1,
-    //% block="data2"
-    DATA2 = 2,
-    //% block="data3"
-    DATA3 = 3,
-};
-
 //% color=#FF9900 weight=95 icon="\uf1b0"
 namespace MbitMore {
     MbitMoreService* _pService = NULL;
@@ -69,26 +58,6 @@ namespace MbitMore {
         create_fiber(update);
         create_fiber(notifyScratch);
     }
-
-    // /**
-    // * Set shared data value.
-    // */
-    // //%
-    // void setMbitMoreSharedData(SharedDataIndex index, int value) {
-    //     if (NULL == _pService) return;
-
-    //     _pService->setSharedData((int)index, value);
-    // }
-
-    // /**
-    //  * Get shared data value. 
-    //  */
-    // //%
-    // int getMbitMoreSharedData(SharedDataIndex index) {
-    //     if (NULL == _pService) return 0;
-
-    //     return _pService->getSharedData((int)index);
-    // }    
     
     /**
      * Used internally by the library.
