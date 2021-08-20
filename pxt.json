@@ -1,11 +1,9 @@
 {
-    "name": "pxt-scratch-microbit-more",
-    "version": "0.5.1",
+    "name": "pxt-scratch-microbit-clone",
+    "version": "0.5.2",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "bluetooth": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
@@ -13,6 +11,7 @@
         "shims.d.ts",
         "extension.ts",
         "extension.cpp",
+        "MbitCodemore.h",
         "MbitMoreService.h",
         "MbitMoreService.cpp",
         "MbitMoreServiceV2.h",
@@ -23,9 +22,6 @@
     ],
     "public": false,
     "yotta": {
-        "dependencies": {
-            "microbit": "yokobond/microbit#mbit-more"
-        },
         "config": {
             "microbit-dal": {
                 "bluetooth": {
@@ -41,7 +37,7 @@
                     "device_info_service": 0,
                     "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM"
                 },
-                "gatt_table_size": "0x340"
+                "gatt_table_size": "0x300"
             }
         }
     }

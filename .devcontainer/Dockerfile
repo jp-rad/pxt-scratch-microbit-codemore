@@ -37,3 +37,4 @@ RUN git clone --depth=1 https://github.com/lancaster-university/codal-core.git \
 RUN git clone --depth=1 https://github.com/microsoft/pxt.git \
     && git clone --depth=1 https://github.com/microsoft/pxt-common-packages.git \
     && git clone --depth=1 https://github.com/microsoft/pxt-microbit.git
+RUN git clone --depth=1 https://github.com/lancaster-university/BLE_API.git

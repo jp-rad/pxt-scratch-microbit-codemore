@@ -1,33 +1,52 @@
-
-namespace MbitMore {
-    let sharedData: number[] = [0, 0, 0, 0];
+/**
+ * CodeMore
+ */
+//% color=#0082FB weight=96 icon="\uf294"
+namespace CodeMore {
 
     /**
     * Starts BLE services for Scratch Microbit-More extension.
     */
-    //% blockId=MbitMore_startMbitMoreService block="start Microbit-More service"
-    //% shim=MbitMore::startMbitMoreService
+    //% blockId=CodeMore_startCodeMoreService block="start Microbit-More service"
+    //% shim=CodeMore::startService
     export function startService():void {
         console.log("Microbit-More started");
     }
 
-    /**
-     * Set value of the shared data.
-     * @param index - Index of shared data.
-     * @param value - New value of shared data.
-     */
-    //% blockId=MbitMore_setMbitMoreSharedData block="set shared %index to %value"
-    //% shim=MbitMore::setMbitMoreSharedData
-    export function setSharedData(index: SharedDataIndex, value: number):void {
-        sharedData[index] = value;
+    let initialized = false;
+    let onDisplayTextCommandBody: (cmd: string) => void;
+
+    function init() {
+        if (initialized) return;
+        initialized = true;
+        onCodemoreEvent(handleCodemoreEvent);
     }
 
     /**
-     * Get value of the shared data.
+     * Used internally by the library.
      */
-    //% blockId=MbitMore_getMbitMoreSharedData block="value of shared %index"
-    //% shim=MbitMore::getMbitMoreSharedData
-    export function getSharedData(index: SharedDataIndex):number {
-        return sharedData[index];
+    //% block
+    //% deprecated=true blockHidden=1
+    //% shim=CodeMore::onCodemoreEvent
+    function onCodemoreEvent(body: () => void): void {
+        console.log("shim=custom::onCodemoreEventImpl")
     }
+
+    function handleCodemoreEvent(): void {
+        if (onDisplayTextCommandBody) {
+            let cmd: string = getLastDisplayTextCommand();
+            onDisplayTextCommandBody(cmd);
+        }
+    }
+
+    /**
+     * on display text command received
+     */
+    //% blockId=CodeMore_onDisplayTextCommand block="on display text command received" blockGap=16
+    //% draggableParameters=reporter
+    export function onDisplayTextCommand(body: (cmd: string) => void) {
+        init();
+        onDisplayTextCommandBody = body;
+    }
+
 }

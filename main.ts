@@ -1,1 +1,0 @@
-MbitMore.startMbitMoreService()

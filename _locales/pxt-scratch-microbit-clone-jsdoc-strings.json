@@ -1,0 +1,6 @@
+{
+  "CodeMore": "CodeMore\n\nCodeMore",
+  "CodeMore.getLastDisplayTextCommand": "Get last display text command",
+  "CodeMore.onDisplayTextCommand": "on display text command received",
+  "CodeMore.startService": "Starts BLE services for Scratch Microbit-More extension."
+}
