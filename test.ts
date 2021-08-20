@@ -1,5 +1,5 @@
 // tests go here; this will not be compiled when this package is used as a library
-MbitMore.onDisplayTextCommand(function (cmd) {
+CodeMore.onDisplayTextCommand(function (cmd) {
     コマンド配列 = cmd.split(" ")
     コマンド部 = コマンド配列[0]
     コマンド部 = コマンド部.toLowerCase()
@@ -17,4 +17,4 @@ if (コマンド部 == "@cmd") {
 let 第1引数 = ""
 let コマンド配列: string[] = []
 let コマンド部 = ""
-MbitMore.startService()
+CodeMore.startService()

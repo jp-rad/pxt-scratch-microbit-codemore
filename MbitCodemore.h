@@ -40,6 +40,10 @@ SOFTWARE.
 #define DEVICE_CODEMORE_EVT_DIPSPLAY_TEXT_CMD 1
 #endif
 
+#define S3BLE_CMD_PIN_CONFIG   0x80
+#define S3BLE_CMD_DISPLAY_TEXT 0x81
+#define S3BLE_CMD_DISPLAY_LED  0x82
+
 typedef int	(*p_displayTextCommand)(MicroBit &, ManagedString &);
 
 #endif

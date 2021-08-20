@@ -93,7 +93,7 @@ void MbitMoreService::onDataWritten(const GattWriteCallbackParams *params)
 
   if (params->handle == rxCharacteristicHandle && params->len > 0)
   {
-    if (data[0] == ScratchBLECommand::CMD_DISPLAY_TEXT)
+    if (data[0] == S3BLE_CMD_DISPLAY_TEXT)
     {
       char text[params->len];
       memcpy(text, &(data[1]), (params->len) - 1);
@@ -104,7 +104,7 @@ void MbitMoreService::onDataWritten(const GattWriteCallbackParams *params)
         uBit.display.scrollAsync(mstr, 120); // Interval is corresponding with the standard extension.
       }
     }
-    else if (data[0] == ScratchBLECommand::CMD_DISPLAY_LED)
+    else if (data[0] == S3BLE_CMD_DISPLAY_LED)
     {
       uBit.display.stopAnimation();
       for (int y = 1; y < params->len; y++)

@@ -1,12 +1,14 @@
-
-namespace MbitMore {
-    let sharedData: number[] = [0, 0, 0, 0];
+/**
+ * CodeMore
+ */
+//% color=#0082FB weight=96 icon="\uf294"
+namespace CodeMore {
 
     /**
     * Starts BLE services for Scratch Microbit-More extension.
     */
-    //% blockId=MbitMore_startMbitMoreService block="start Microbit-More service"
-    //% shim=MbitMore::startMbitMoreService
+    //% blockId=CodeMore_startCodeMoreService block="start Microbit-More service"
+    //% shim=CodeMore::startService
     export function startService():void {
         console.log("Microbit-More started");
     }
@@ -25,7 +27,7 @@ namespace MbitMore {
      */
     //% block
     //% deprecated=true blockHidden=1
-    //% shim=MbitMore::onCodemoreEventImpl
+    //% shim=CodeMore::onCodemoreEvent
     function onCodemoreEvent(body: () => void): void {
         console.log("shim=custom::onCodemoreEventImpl")
     }
@@ -40,7 +42,7 @@ namespace MbitMore {
     /**
      * on display text command received
      */
-    //% blockId=MbitMore_onDisplayTextCommand block="on display text command received" blockGap=16
+    //% blockId=CodeMore_onDisplayTextCommand block="on display text command received" blockGap=16
     //% draggableParameters=reporter
     export function onDisplayTextCommand(body: (cmd: string) => void) {
         init();

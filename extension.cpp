@@ -9,8 +9,12 @@
 #define UPDATE_PERIOD 11
 #define NOTIFY_PERIOD 101
 
-//% color=#FF9900 weight=95 icon="\uf1b0"
-namespace MbitMore {
+/**
+ * CodeMore
+ */
+//% color=#0082FB weight=96 icon="\uf294"
+namespace CodeMore {
+    
     MbitMoreService* _pService = NULL;
     MicroBitEvent _evt(DEVICE_ID_CODEMORE, DEVICE_CODEMORE_EVT_DIPSPLAY_TEXT_CMD);
 
@@ -46,11 +50,8 @@ namespace MbitMore {
         }
     }
 
-    /**
-    * Starts a Scratch extension service.
-    */
     //%
-    void startMbitMoreService() {
+    void startService() {
         if (NULL != _pService) return;
 
         _pService = new MbitMoreService(uBit);
@@ -59,13 +60,8 @@ namespace MbitMore {
         create_fiber(notifyScratch);
     }
     
-    /**
-     * Used internally by the library.
-     */
-    //% block
-    //% deprecated=true blockHidden=1 
-    void onCodemoreEventImpl(Action body) {
-        //registerWithDal(MICROBIT_ID_BUTTON_A, MICROBIT_BUTTON_EVT_CLICK, body);
+    //%
+    void onCodemoreEvent(Action body) {
         registerWithDal(DEVICE_ID_CODEMORE, DEVICE_CODEMORE_EVT_DIPSPLAY_TEXT_CMD, body);
     }
 

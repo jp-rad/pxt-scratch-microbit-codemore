@@ -1,8 +1,6 @@
 {
-  "MbitMore.getLastDisplayTextCommand": "Get last display text command",
-  "MbitMore.onCodemoreEventImpl": "Used internally by the library.",
-  "MbitMore.onDisplayTextCommand": "on display text command received",
-  "MbitMore.startMbitMoreService": "Starts a Scratch extension service.",
-  "MbitMore.startService": "Starts BLE services for Scratch Microbit-More extension.",
-  "ScratchBLECommand": "Rotation value [pitch, roll] in radians."
+  "CodeMore": "CodeMore\n\nCodeMore",
+  "CodeMore.getLastDisplayTextCommand": "Get last display text command",
+  "CodeMore.onDisplayTextCommand": "on display text command received",
+  "CodeMore.startService": "Starts BLE services for Scratch Microbit-More extension."
 }

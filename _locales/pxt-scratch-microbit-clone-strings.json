@@ -1,8 +1,7 @@
 {
-  "MbitMore.getLastDisplayTextCommand|block": "true",
-  "MbitMore.onCodemoreEventImpl|block": "true",
-  "MbitMore.onDisplayTextCommand|block": "on display text command received",
-  "MbitMore.startService|block": "start Microbit-More service",
-  "MbitMore|block": "MbitMore",
-  "{id:category}MbitMore": "MbitMore"
+  "CodeMore.getLastDisplayTextCommand|block": "true",
+  "CodeMore.onDisplayTextCommand|block": "on display text command received",
+  "CodeMore.startService|block": "start Microbit-More service",
+  "CodeMore|block": "CodeMore",
+  "{id:category}CodeMore": "CodeMore"
 }
