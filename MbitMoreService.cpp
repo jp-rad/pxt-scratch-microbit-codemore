@@ -292,7 +292,7 @@ void MbitMoreService::onBLEConnected(MicroBitEvent _e)
 {
   uBit.display.stopAnimation(); // To stop display friendly name.
   initConfiguration();
-  uBit.display.scrollAsync("v.0.5.2");
+  uBit.display.scrollAsync("v.0.5.3");
 }
 
 void MbitMoreService::onBLEDisconnected(MicroBitEvent _e)
