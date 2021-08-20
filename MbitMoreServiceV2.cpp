@@ -59,14 +59,6 @@ void MbitMoreService::onGestureChanged(MicroBitEvent e)
 }
 
 /**
- * Normalize angle in upside down.
- */
-int MbitMoreService::normalizeCompassHeading(int heading)
-{
-  // TODO:  Normalize angle in upside down.
-}
-
-/**
  * Convert roll/pitch radians to Scratch extension value (-1000 to 1000).
  */
 int MbitMoreService::convertToTilt(float radians)
@@ -91,7 +83,7 @@ void MbitMoreService::updateDigitalValues()
 
 void MbitMoreService::updatePowerVoltage()
 {
-  powerVoltage = getPowerVoltage();
+  //
 }
 
 void MbitMoreService::updateAnalogValues()
@@ -141,7 +133,7 @@ void MbitMoreService::setPinModeTouch(int pinIndex)
 
 void MbitMoreService::setLightSensingDuration(int duration)
 {
-  lightSensingDuration = duration;
+  //
 }
 
 void MbitMoreService::composeDefaultData(uint8_t *buff)
@@ -173,24 +165,6 @@ void MbitMoreService::notify()
   // TODO: 
 }
 
-/**
- * Set value to shared data.
- * shared data (0, 1, 2, 3)
- */
-void MbitMoreService::setSharedData(int index, int value)
-{
-  //
-}
-
-/**
- * Get value of a shared data.
- * shared data (0, 1, 2, 3)
- */
-int MbitMoreService::getSharedData(int index)
-{
-  //
-}
-
 void MbitMoreService::onBLEConnected(MicroBitEvent _e)
 {
   //
@@ -198,7 +172,7 @@ void MbitMoreService::onBLEConnected(MicroBitEvent _e)
 
 void MbitMoreService::onBLEDisconnected(MicroBitEvent _e)
 {
-  lightSensingDuration = 0;
+  //
 }
 
 /**
@@ -206,12 +180,7 @@ void MbitMoreService::onBLEDisconnected(MicroBitEvent _e)
  */
 void MbitMoreService::update()
 {
-  updateDigitalValues();
-  writeIo();
-  updateLightSensor();
-  updateAccelerometer();
-  updateMagnetometer();
-  writeSensors();
+  //
 }
 
 /**
