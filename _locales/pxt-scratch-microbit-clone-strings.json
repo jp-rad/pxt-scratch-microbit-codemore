@@ -1,0 +1,7 @@
+{
+  "CodeMore.getLastDisplayTextCommand|block": "true",
+  "CodeMore.onDisplayTextCommand|block": "on display text command received",
+  "CodeMore.startService|block": "start Microbit-More service",
+  "CodeMore|block": "CodeMore",
+  "{id:category}CodeMore": "CodeMore"
+}
